@@ -1,0 +1,1 @@
+eto na bago natin repository ang gulo na kase sa kabila kaya pakiusap sabihin niyo sakin kung may ibabago kayo para na tratrack ko eto narin magsisilbing final code kaya wag basta basta add ng file thankyou
