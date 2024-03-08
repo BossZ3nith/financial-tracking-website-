@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: yellow;
+      color: #FFD700;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .to-do-container {
+      max-width: 800px; /* Adjusted max-width */
+      margin: 50px auto; /* Adjusted margin */
+      padding: 50px; /* Adjusted padding */
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      background-color: black;
+    }
+
+    .form-control {
+      border: none;
+      border-radius: 20px;
+      background-color: #222;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      color: #fff;
+    }
+    .form-control:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .btn-primary {
+      background-color: #FFD700;
+      color: #000;
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #DAA520;
+    }
+
+    .list-group-item {
+      background-color: #222;
+      color: #FFD700;
+      border: none;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .list-group-item:hover {
+      background-color: #111;
+    }
+
+    .task-buttons {
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      transform: translateY(-50%);
+    }
+
+    .delete-button,
+    .edit-button {
+      margin-right: 5px;
+      
+      padding: 5px 10px;
+      color: black;
+      
+    }
+
+    .delete-button:hover,
+    .edit-button:hover {
+      background-color: #FFD700;
+      color: #000;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+    }
+    .navbar {
+      background-color: #ffd700;
+      padding: 10px 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar ul li {
+      margin-right: 20px; /* Adjusted margin */
+      transition: transform 0.2s;
+    }
+
+    .navbar ul li:last-child {
+      margin-right: 0;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+    }
+
+    .navbar ul li a:hover, 
+    .navbar ul li a:focus {
+      transform: scale(1.1);
+    }
+    .btn-container {
+  background-color: black;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="navbar">
+    <ul>
+        <li id="home" class="active"><a href="homepage1.html"><img src="/images/logo1.png" alt="Home"></a></li>
+    </ul>
+    <ul>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="tips.html">Tips</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="account.html">Account</a></li>
+    </ul>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2"> <!-- Adjusted column width for larger screens -->
+      <div class="to-do-container">
+        <h2 class="text-center">Take Notes</h2>
+        <form id="to-do-form">
+          <div class="form-group">
+            <label for="task">Task</label>
+            <input type="text" class="form-control" id="task" placeholder="Enter task">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Add Task</button>
+        </form>
+        <ul class="list-group mt-3" id="task-list">
+          <!-- Tasks will be added here dynamically -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row justify-content-center"> <!-- Center the buttons -->
+    <div class="col-lg-8 offset-lg-2"> <!-- Adjusted column width for larger screens -->
+      <div class="container btn-container"> <!-- Added container for buttons with background -->
+        <div class="btn-group">
+          <button type="button" class="btn btn-warning edit-button">Edit</button>
+          <button type="button" class="btn btn-danger delete-button">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('to-do-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var taskInput = document.getElementById('task').value;
+
+    if (taskInput.trim() !== '') {
+      var listItem = document.createElement('li');
+      listItem.className = 'list-group-item';
+      listItem.textContent = taskInput;
+
+      document.getElementById('task-list').appendChild(listItem);
+
+      document.getElementById('task').value = '';
+    } else {
+      alert('Please enter a task.');
+    }
+  });
+
+  document.querySelector('.edit-button').addEventListener('click', function() {
+    var listItem = document.querySelector('.list-group-item');
+    var newText = prompt('Enter new text:', listItem.textContent);
+    if (newText !== null && newText.trim() !== '') {
+      listItem.textContent = newText;
+    }
+  });
+
+  document.querySelector('.delete-button').addEventListener('click', function() {
+    var listItem = document.querySelector('.list-group-item');
+    listItem.remove();
+  });
+</script>
+
+</body>
+</html>
