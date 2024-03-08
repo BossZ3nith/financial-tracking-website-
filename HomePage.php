@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Savings and Expenses Tracker</title>
+<title>Home</title>
 <style>
     body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
     margin: 0;
     padding: 0;
     background-color: black; /* Light yellow background */
@@ -140,7 +140,7 @@ button:hover {
     padding: 10px;
     border-radius: 5px;
     margin: 0 5px; /* Add margin for spacing */
-    
+    a
 }
 
 .savings-notification {
@@ -282,10 +282,10 @@ button:hover {
 </head>
 <div class="navbar">
     <ul>
-        <li id="home" class="active"><a href="home.html"><img src="/images/logo1.png" alt="Home"></a></li>
+        <li id="home" class="active"><a href="homepage1.html"><img src="/images/logo1.png" alt="Home"></a></li>
     </ul>
     <ul>
-        <li><a href="calendar.html">Calendar</a></li>
+        <li><a href=".html">Notes</a></li>
         <li><a href="tips.html">Tips</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="account.html">Account</a></li>
@@ -488,4 +488,4 @@ button:hover {
     }
 </script>
 </body>
-</html>
+</htm
