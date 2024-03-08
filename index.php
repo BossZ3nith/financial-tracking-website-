@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -18,7 +15,7 @@
     }
 
     .banner {
-      background-color: grey /* Black banner */
+      background-color: grey; /* Black banner */
       height: 50px;
     }
 
@@ -33,6 +30,7 @@
 
     .logo {
       width: 300px; /* Adjusted width for the logo */
+      margin: 0 auto; /* Center the logo horizontally */
       margin-bottom: 10px; /* Add space below the logo */
     }
 
@@ -82,40 +80,36 @@
     .custom-forgot-password-btn:hover {
       background-color: #222; /* Darker black button on hover */
     }
-
   </style>
 </head>
-
 <body>
-  <div class="banner">
-    <!-- Add your banner content here -->
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div class="login-container">
         <div class="text-center">
-          <img src="/images/brand2.png" class="logo">
+          <img src="brand.png" class="logo" alt="Logo">
         </div>
-        <div class="login-container">
-          <h2 class="text-center"><span class="login-word">LOGIN</span></h2>
-          <form id="loginForm">
-            <div class="form-group">
-              <input type="text" class="form-control" id="username" placeholder="Username">
-            </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <button type="submit" class="btn btn-primary btn-block custom-login-btn">Login</button>
-          </form>
-          <div class="text-center mt-3">
-            <a href="register.html" class="btn btn-link custom-register-btn">Register</a>
-            <a href="forgotpassword.html" class="btn btn-link custom-forgot-password-btn">Forgot Password</a>
+        <h2 class="text-center">Login</h2>
+        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="Username" placeholder="Enter username">
           </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="Password" placeholder="Enter password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block custom-login-btn">Login</button>
+        </form>
+        <div class="text-center mt-3">
+          <a href="Register.php" class="btn btn-link custom-register-btn">Register</a>
+          <a href="Resetpassword.php" class="btn btn-link custom-forgot-password-btn">Forgot Password</a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
