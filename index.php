@@ -1,121 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
   <style>
     body {
-      background-image: url('bg.png');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      padding: 50px 0px;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: yellow; /* Black background */
+      color: #fff; /* White text color */
+    }
+
+    .banner {
+      background-color: grey /* Black banner */
+      height: 50px;
     }
 
     .login-container {
-      max-width: 300px;
+      max-width: 600px;
       margin: 100px auto;
-      padding: 50px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 2px solid white; /* Border with solid white color */
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.6); /* Shadow effect */
-      backdrop-filter: blur(3px); /* Blur effect */
-      color: white;
-      position: relative; /* To allow absolute positioning of logo */
-    }
-
-    .login-container .logo {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .login-container:hover button {
-      background-color: blue; /* Blue color on button hover */
-      border-color: white; /* Blue border on button hover */
-    }
-
-    .form-control {
-      border: 2px solid darkblue;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      background-color: #111; /* Darker black container background */
     }
 
     .logo {
-      width: 100%;
-      border: 2px;
+      width: 300px; /* Adjusted width for the logo */
+      margin-bottom: 10px; /* Add space below the logo */
     }
 
     .login-word {
-      color: greenyellow;
+      font-size: 24px; /* Increase font size */
+      color: #FFD700; /* Yellow color */
+      text-transform: uppercase; /* Uppercase text */
     }
 
-    .login-text {
-      font-family: "Lucida Sans", "Lucida Grande", "Lucida", sans-serif;
-      color: white;
-      box-shadow: 10px 10px 10px #000;
+    .form-control {
+      border: none; /* Remove border */
+      border-radius: 20px; /* Rounded corners */
+      background-color: #222; /* Darker black input background */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Light shadow */
+      color: #fff; /* White text color */
+    }
+
+    .form-control:focus {
+      outline: none; /* Remove focus outline */
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5); /* Yellow shadow on focus */
     }
 
     .custom-login-btn {
-      background-color: transparent; /* Set background color to transparent */
-      color: #ffffff; /* Set text color to white */
-      border-color: #ffffff; /* Set border color to white */
+      background-color: #FFD700; /* Yellow button background */
+      color: #000; /* Black button text color */
+      border: none; /* Remove button border */
+      border-radius: 20px; /* Rounded corners */
+      padding: 10px 20px; /* Add padding */
+      transition: background-color 0.3s ease; /* Smooth color transition */
     }
 
     .custom-login-btn:hover {
-      background-color: red; /* Change the background color on hover to white */
-      color: white; /* Change the text color on hover to black */
+      background-color: #DAA520; /* Darker yellow button on hover */
     }
 
-    .custom-register-btn {
-      background-color: transparent; /* Set background color to transparent */
-      color: #ffffff; /* Set text color to white */
-    }
-
-    .custom-register-btn:hover {
-      background-color: #ffffff; /* Change the background color on hover to white */
-      color: #000000; /* Change the text color on hover to black */
-    }
-
+    .custom-register-btn,
     .custom-forgot-password-btn {
-      background-color: transparent; /* Set background color to transparent */
-      color: #ffffff; /* Set text color to white */
+      background-color: #111; /* Darker black button background */
+      color: #FFD700; /* Yellow button text color */
+      border: none; /* Remove button border */
+      border-radius: 20px; /* Rounded corners */
+      padding: 5px 15px; /* Add padding */
+      margin-right: 10px; /* Add space between buttons */
     }
 
+    .custom-register-btn:hover,
     .custom-forgot-password-btn:hover {
-      background-color: #ffffff; /* Change the background color on hover to white */
-      color: #000000; /* Change the text color on hover to black */
+      background-color: #222; /* Darker black button on hover */
     }
+
   </style>
 </head>
+
 <body>
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <div class="login-container">
-        <img src="brand.png" class="logo" alt="Logo">
-        <h2 class="text-center">Login</h2>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-          <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" name="Username" placeholder="Enter username">
+  <div class="banner">
+    <!-- Add your banner content here -->
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="text-center">
+          <img src="/images/brand2.png" class="logo">
+        </div>
+        <div class="login-container">
+          <h2 class="text-center"><span class="login-word">LOGIN</span></h2>
+          <form id="loginForm">
+            <div class="form-group">
+              <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block custom-login-btn">Login</button>
+          </form>
+          <div class="text-center mt-3">
+            <a href="register.html" class="btn btn-link custom-register-btn">Register</a>
+            <a href="forgotpassword.html" class="btn btn-link custom-forgot-password-btn">Forgot Password</a>
           </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" name="Password" placeholder="Enter password">
-          </div>
-          <button type="submit" class="btn btn-primary btn-block custom-login-btn">Login</button>
-        </form>
-        <div class="text-center mt-3">
-          <a href="Register.php" class="btn btn-link custom-register-btn">Register</a>
-          <a href="Resetpassword.php" class="btn btn-link custom-forgot-password-btn">Forgot Password</a>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
