@@ -56,6 +56,7 @@ $conn->close();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,44 +64,99 @@ $conn->close();
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #f8f9fa;
+      background-color: yellow; /* Black background */
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #FFD700; /* White text color */
     }
+
+    .banner {
+      background-color: yellow; /* Darker black banner */
+      height: 50px;
+    }
+
     .forgot-password-container {
-      max-width: 400px;
+      max-width: 800px; /* Adjusted max-width for the container */
       margin: 100px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      background-color: #111; /* Darker black container background */
+    }
+
+    .form-control {
+      border: none;
+      border-radius: 20px;
+      background-color: #222; /* Darker black input background */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      color: #fff;
+      padding: 15px 20px; /* Adjust padding */
+      margin-bottom: 20px; /* Add space between inputs */
+    }
+
+    .form-control:focus {
+      outline: none;
+      box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    }
+
+    .btn-primary {
+      background-color: #FFD700; /* Yellow button background */
+      color: #000; /* Black button text color */
+      border: none; /* Remove button border */
+      border-radius: 20px; /* Rounded corners */
+      padding: 15px 30px; /* Adjust padding */
+      margin-top: 20px; /* Add space between button and inputs */
+      transition: background-color 0.3s ease; /* Smooth color transition */
+    }
+
+    .btn-primary:hover {
+      background-color: #DAA520; /* Darker yellow button on hover */
+    }
+
+    .btn-link {
+      background-color: #111; /* Darker black button background */
+      color: #FFD700; /* Yellow button text color */
+      border: none; /* Remove button border */
+      border-radius: 20px; /* Rounded corners */
+      padding: 10px 20px; /* Adjust padding */
+      margin-right: 10px; /* Add space between buttons */
+    }
+
+    .btn-link:hover {
+      background-color: #222; /* Darker black button on hover */
     }
   </style>
 </head>
-<body>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 offset-md-3">
-      <div class="forgot-password-container">
-        <h2 class="text-center">Forgot Password</h2>
-        <?php if(isset($error_message)): ?>
-          <div class="alert alert-danger" role="alert">
-            <?php echo $error_message; ?>
+<body>
+  <div class="banner">
+    <!-- Add your banner content here -->
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="text-center">
+          <img src="/images/brand1.png" class="logo">
+        </div>
+        <div class="forgot-password-container">
+          <h2 class="text-center">Forgot Password</h2>
+          <br>
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="email" placeholder="Email Address">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+          </form>
+          <div class="text-center mt-3">
+            <a href="loginscreen.html" class="btn btn-link">Return to login screen</a>
           </div>
-        <?php endif; ?>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" class="form-control" id="email" name="Email" placeholder="Enter email">
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
-        </form>
-        <div class="text-center mt-3">
-          <a href="index.php" class="btn btn-link">Return to login screen</a>
         </div>
       </div>
     </div>
   </div>
-</div>
 
 </body>
+
 </html>
