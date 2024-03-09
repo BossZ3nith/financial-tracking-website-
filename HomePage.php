@@ -285,7 +285,7 @@ button:hover {
         <li id="home" class="active"><a href="homepage1.html"><img src="/images/logo1.png" alt="Home"></a></li>
     </ul>
     <ul>
-        <li><a href=".html">Notes</a></li>
+        <li><a href="notes.html">Notes</a></li>
         <li><a href="tips.html">Tips</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="account.html">Account</a></li>
